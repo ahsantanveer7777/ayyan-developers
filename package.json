@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "This is Construction Website",
   "main": "backend.js",
-  "scripts": {
+
+   "scripts":{
+    "start": "node backend.js",
+    "dev": "vercel dev", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
