@@ -173,7 +173,7 @@ html {
     padding: 30px;
     gap: 15px;
     /* margin-bottom: 60px; */
-    background: rgb(0 0 0 / 50%) url('/public/img/pexels-scottwebb-24924.jpg') no-repeat center center/cover;
+    background: rgb(0 0 0 / 50%) url('../img/pexels-scottwebb-24924.jpg') no-repeat center center/cover;
     background-blend-mode: darken;
     color: #ffffff;
 }
