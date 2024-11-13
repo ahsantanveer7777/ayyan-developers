@@ -1,0 +1,546 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-bar {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 75px;
+    padding: 10px 5px;
+    background-color: rgba(192, 192, 192, 0.50);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 3%;
+    top: 28px;
+}
+.hamburger-line {
+    width: 44px;
+    height: 4px;
+    background-color: #544636;
+    margin: 3px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+}
+.nav-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 65%;
+}
+
+.logo img {
+    width: 25%;
+   
+}
+.logo-txt {
+    width: 75%;
+    color: #cf4946;
+    font-size: 25px;
+    margin-left: -25px;
+    font-family: cursive;
+    font-weight: bolder
+}
+
+.nav-text ul {
+    display: flex;
+}
+
+.nav-text ul li {
+    position: relative;   /* Position parent relative to hold dropdown */
+    padding: 10px 20px;
+    display: flex;
+}
+
+.nav-text ul li ul {
+    /* display: none;  We will remove this, & use visibility & opacity for Transition  */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #dfdfdf;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #544636;
+    font-size: 1rem;
+    color: black;
+    z-index: 1000; /* Ensure the dropdown stays on top */
+    min-width: 200px;  /* Set a minimum width for better UI */
+
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Hide from view, but still in the document flow */
+    transition: opacity 0.5s ease-in, visibility 0.5s ease-in; /* Smooth transition */
+
+    display: flex;
+    flex-direction: column; /* Ensure dropdown items are in column */
+}
+
+/* Display the main categories dropdown on hover */
+.nav-text ul li:hover > ul {
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make it visible */
+}
+
+.about-li-icon {
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.about-li:hover .about-li-icon {
+    transform: rotate(180deg);
+}
+
+.nav-text>ul>li>a {
+    text-decoration: none;
+    color: #544636;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: cursive;
+    transition: color 0.5s ease;
+}
+.nav-text>ul>li>a:hover {
+    color: #cf4946;
+}
+
+.nav-text ul li ul li {
+    padding: 10px;  /* Add padding inside dropdown items  */
+    border-bottom: 1px solid #544636;
+}
+
+.nav-text ul li ul li:last-child {
+    border-bottom: none;
+}
+.nav-text ul li ul li a {
+    text-decoration: none;
+    color: #544636;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: cursive;
+    transition: color 0.5s ease;
+}
+.nav-text ul li ul li a:hover {
+    color: #cf4946; 
+}
+
+.about-li {
+    display: flex;
+    position: relative;
+}
+.about-li img{
+    position: absolute;
+    width: 18px;
+    bottom: 15px;
+    filter: invert(30%) sepia(16%) saturate(850%) hue-rotate(-15deg) brightness(90%) contrast(85%);    
+}
+.about-li:hover {
+    cursor: pointer;
+}
+
+/* Change the icon color to red when hovering over the 'About' link */
+.about-li:hover .about-li-icon {
+    filter: invert(41%) sepia(24%) saturate(2593%) hue-rotate(339deg) brightness(91%) contrast(96%);
+}
+ 
+.main-sec {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    padding: 30px;
+    gap: 15px;
+    margin-bottom: 60px;
+    background: rgb(0 0 0 / 50%) url('/public/img/pexels-pixabay-273209.jpg') no-repeat center center/cover;
+    background-blend-mode: darken;
+    color: #ffffff;
+}
+.h2 {
+    font-size: 2.25rem;
+}
+.h4 {
+    font-size: 4rem;
+}
+.line {
+    width: 100px;
+    height: 4px;
+    background-color: #1b88db;
+}
+
+.services-sec {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    margin: 60px 0px;
+    gap: 15px;
+}
+.services-sec ul {
+    display: flex;
+    text-align: center;
+    gap: 35px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.services-sec ul li { 
+    list-style-type: none;
+    border: 1px solid grey;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 274px;
+}
+.services-sec-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    gap: 30px;
+}
+.services-sec-img img {
+    width: 48%;
+    background-color: oklab(0.6 0 0 / 0.26);
+}
+
+.specialization-sec {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    margin: 60px 0px;
+    gap: 15px;
+}
+.specialization-sec-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+    width: 300px;
+}
+.icons img {
+    width: 50px;
+    height: 50px;
+}
+.text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.img-scroll {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px; 
+    background: rgb(196 196 196 / 50%) url("/public/img/pexels-expect-best-79873-323705.jpg") no-repeat center center/cover;
+    background-attachment: fixed;  /* Key property for parallax effect  */
+    /* overflow: hidden; /* Overflow & Opacity will not be used for overlapped button */
+    /* opacity: 0.7;  */
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 2px solid #ffffff;
+    z-index: 1;
+    margin-top: 60px;
+    color: #ffffff;
+}
+.img-scroll button {
+    position: relative;
+    bottom: -38%;
+    z-index: 10; /* Higher for On top of both sections */
+    width: 200px;
+    padding: 12px;
+    background-color: #1b88db;
+    border: none;
+    mix-blend-mode: normal; /* Prevent background blending */
+    box-shadow: 0px 16px 32px -16px rgba(255, 94, 20, 0.64);
+    transition: background-color 0.5s ease; /* Smooth transition for background color */    
+}
+.img-scroll button:hover {
+    cursor: pointer;
+    background-color: #181f2a;
+}
+.img-scroll button a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.intro-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 30px;
+    /* margin-top: 60px; */
+    background-color: #181f2a;
+    gap: 40px;
+    color: white;
+    border-bottom: 1px solid #1b88db;
+}
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    gap: 15px;
+}
+.intro-sec1 {
+    width: 40%;
+}
+
+.intro-sec1 > .logo {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    top: 12px;
+}
+.mb {
+    margin-bottom: 20px;
+}
+
+.intro-sec2 {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+.intro-sec2 a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s ease;
+}
+.intro-sec2 a:hover {
+    color: #1b88db;
+}
+.intro-sec3 {
+    width: 30%;
+}
+
+.p1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.p2 {
+    font-size: 20px;
+}
+.h3 {
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 9px;
+    background-color: #181f2a;
+    color: white;
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1020px) {
+    .nav-bar {
+        padding: 10px 3px;
+    }
+    .logo {
+        width: 30%;
+    } 
+     .nav-text {
+        width: 70%;
+    }
+    .logo img {
+        width: 30%;
+    }
+
+    .logo-txt {
+        width: 70%;
+        font-size: 17px;
+        margin-left: -15px;
+    }
+
+    .nav-text ul li {
+        padding: 10px 12px;
+     
+    }
+    .nav-text>ul>li>a {
+        font-size: 1.25rem;
+    }
+
+    .services-sec ul {
+        justify-content: center;
+     
+    }
+    .img-scroll h2 {
+        font-size: 1.5rem;
+    }
+    .img-scroll button {
+        position: relative;
+        bottom: -41%;
+    }
+
+    .intro-sec1 p, .intro-sec2 a, .intro-sec3 p, .footer p {
+        font-size: 15px;
+    }  
+}
+
+@media only screen and (max-width: 759px) {
+    .nav-bar {
+        position: relative;
+        width: 100%;
+        height: auto; /* Allows height to expand based on content */
+        flex-direction: column;
+    }
+  
+    .hamburger {
+        display: flex;
+    }
+
+    .logo,
+    .nav-text {
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 1.2s ease-out, opacity 1.2s ease-out;
+    }
+
+    .logo.show {
+        max-height: 150px;  /* Adjust the height you want */
+        opacity: 1;
+    }
+    .nav-text.show {
+        max-height: 300px;  /* Adjust the height you want */
+        opacity: 1;
+    }
+  
+    .nav-text ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .h4 {
+        position: absolute;
+        top: 235px;
+    }
+    .h4.show {
+      display: none;
+    }
+   
+  
+    .logo {
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        top: -25px;
+        left: -5%;
+    }
+    .logo img {
+        width: 20%;
+       
+    }
+    .logo-txt {
+        width: 80%;
+        color: #cf4946;
+        font-size: 25px;
+        margin-left: -25px;
+        font-family: cursive;
+        font-weight: bolder
+    }
+
+    .main-sec {
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px;
+    }
+
+    .img-scroll h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        font-size: 1.5rem;
+    }
+    .img-scroll button {
+        position: relative;
+        bottom: -13%;
+    }
+
+
+
+    .intro-sec {
+        flex-direction: column;
+        padding: 80px 20px;
+        gap: 80px;
+    }
+    .intro-sec1 {
+        width: 90%;
+    }
+    
+    .intro-sec1 > .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2rem;
+        height: fit-content;
+        opacity: 1;
+    }
+
+    .intro-sec1 > .logo > .logo-txt {
+        font-size: 20px;
+    }
+
+    .intro-sec2 {
+        width: 100%;
+    }
+    .intro-sec3 {
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer {
+        height: 75px;
+    }
+}
